@@ -17,6 +17,20 @@ const client = new Client({
   },
 });
 
+import express from 'express';
+
+const app = express();
+const port = process.env.PORT || 4000;
+
+app.get('/', (req, res) => {
+  res.send('WhatsApp bot is running');
+});
+
+app.listen(port, () => {
+  console.log(`Express server listening on port ${port}`);
+});
+
+
 const knowledgeBase = {
   hello: `🌿 *Namaste from Chembarathi Wayanad!* 🌄🍃 Let me know how I can assist you today! 😊`,
   hi: `🌿 *Namaste from Chembarathi Wayanad!* 🌿 How can I help you today? 😊`,
