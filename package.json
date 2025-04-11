@@ -1,6 +1,7 @@
 {
   "type": "module",
   "dependencies": {
+    "express": "^4.18.1",  // or the latest version of express
     "qrcode-terminal": "^0.12.0",
     "whatsapp-web.js": "^1.27.0"
   },
