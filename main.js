@@ -3,6 +3,7 @@ import qrcode from 'qrcode-terminal';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import express from 'express';
 
 const { Client, LocalAuth, MessageMedia } = pkg;
 
@@ -17,20 +18,17 @@ const client = new Client({
   },
 });
 
-import express from 'express';
-
+// EXPRESS SERVER
 const app = express();
 const port = process.env.PORT || 4000;
-
 app.get('/', (req, res) => {
   res.send('WhatsApp bot is running');
 });
-
 app.listen(port, () => {
   console.log(`Express server listening on port ${port}`);
 });
 
-
+// BOT CONTENT
 const knowledgeBase = {
   hello: `🌿 *Namaste from Chembarathi Wayanad!* 🌄🍃 Let me know how I can assist you today! 😊`,
   hi: `🌿 *Namaste from Chembarathi Wayanad!* 🌿 How can I help you today? 😊`,
@@ -47,11 +45,11 @@ const knowledgeBase = {
 
 const roomImages = [
   {
-    path: 'H:\\Bot\\images\\premium_room_1.jpg',
+    path: path.join(__dirname, 'public', 'images', 'premium_room_1.jpg'),
     caption: '🏡 *Premium Room* – A beautiful view of our premium room!',
   },
   {
-    path: 'H:\\Bot\\images\\honeymoon_suite_1.jpg',
+    path: path.join(__dirname, 'public', 'images', 'honeymoon_suite_1.jpg'),
     caption: '💖 *Honeymoon Suite* – A romantic getaway with a private pool!',
   },
 ];
@@ -68,7 +66,7 @@ const sendMultipleImages = async (message) => {
 };
 
 const sendPDF = async (message) => {
-  const pdfPath = 'H:\\Bot\\Campus Recruitment Program 2025.pdf';
+  const pdfPath = path.join(__dirname, 'public', 'pdf', 'Campus Recruitment Program 2025.pdf');
   if (fs.existsSync(pdfPath)) {
     const media = MessageMedia.fromFilePath(pdfPath);
     await client.sendMessage(message.from, media, { caption: 'Here is your PDF file.' });
@@ -78,7 +76,7 @@ const sendPDF = async (message) => {
 };
 
 const sendVideo = async (message) => {
-  const videoPath = 'H:\\Bot\\videos\\sample_video.mp4';
+  const videoPath = path.join(__dirname, 'public', 'videos', 'sample_video.mp4');
   if (fs.existsSync(videoPath)) {
     const media = MessageMedia.fromFilePath(videoPath);
     await client.sendMessage(message.from, media, { caption: 'Here is your video file.' });
@@ -87,6 +85,7 @@ const sendVideo = async (message) => {
   }
 };
 
+// WHATSAPP EVENTS
 client.on('qr', (qr) => {
   console.log('QR RECEIVED, scan this with your WhatsApp app:');
   qrcode.generate(qr, { small: true });
@@ -120,14 +119,7 @@ client.on('message', async (message) => {
     await message.reply(knowledgeBase.cancel);
   } else if (messageText.includes('help')) {
     await message.reply(knowledgeBase.help);
-  } else if (
-    messageText.includes('room image') ||
-    messageText.includes('pics') ||
-    messageText.includes('photos') ||
-    messageText.includes('photo') ||
-    messageText.includes('image') ||
-    messageText.includes('img')
-  ) {
+  } else if (messageText.includes('image') || messageText.includes('photo') || messageText.includes('pics')) {
     await sendMultipleImages(message);
   } else if (messageText.includes('pdf')) {
     await sendPDF(message);
