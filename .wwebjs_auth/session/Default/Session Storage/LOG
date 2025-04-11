@@ -1,4 +1,3 @@
-2025/04/11-16:28:23.013 ac0 Reusing MANIFEST H:\Bot\.wwebjs_auth\session\Default\Session Storage/MANIFEST-000001
-2025/04/11-16:28:23.023 ac0 Recovering log #3
-2025/04/11-16:28:23.023 ac0 (ignoring error) H:\Bot\.wwebjs_auth\session\Default\Session Storage/000003.log: dropping 731 bytes; Corruption: checksum mismatch
-2025/04/11-16:28:23.023 ac0 Reusing old log H:\Bot\.wwebjs_auth\session\Default\Session Storage/000003.log 
+2025/04/11-17:41:54.022 4f6c Reusing MANIFEST C:\Users\Hrishi\Pictures\New folder\automatic-umbrella\.wwebjs_auth\session\Default\Session Storage/MANIFEST-000001
+2025/04/11-17:41:54.022 4f6c Recovering log #3
+2025/04/11-17:41:54.023 4f6c Reusing old log C:\Users\Hrishi\Pictures\New folder\automatic-umbrella\.wwebjs_auth\session\Default\Session Storage/000003.log 
