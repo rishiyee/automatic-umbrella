@@ -1,3 +1,5 @@
-2025/04/11-17:41:53.391 3f10 Reusing MANIFEST C:\Users\Hrishi\Pictures\New folder\automatic-umbrella\.wwebjs_auth\session\Default\Local Storage\leveldb/MANIFEST-000001
-2025/04/11-17:41:53.392 3f10 Recovering log #3
-2025/04/11-17:41:53.393 3f10 Reusing old log C:\Users\Hrishi\Pictures\New folder\automatic-umbrella\.wwebjs_auth\session\Default\Local Storage\leveldb/000003.log 
+2025/04/13-23:09:32.218 512c Reusing MANIFEST C:\Users\USER\Downloads\New folder\automatic-umbrella\.wwebjs_auth\session\Default\Local Storage\leveldb/MANIFEST-000001
+2025/04/13-23:09:32.218 512c Recovering log #4
+2025/04/13-23:09:32.219 512c Level-0 table #7: started
+2025/04/13-23:09:32.224 512c Level-0 table #7: 13308 bytes OK
+2025/04/13-23:09:32.229 512c Delete type=0 #4
