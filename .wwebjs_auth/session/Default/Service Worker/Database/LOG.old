@@ -1,3 +1,2 @@
-2025/04/13-23:08:04.671 1b6c Reusing MANIFEST C:\Users\USER\Downloads\New folder\automatic-umbrella\.wwebjs_auth\session\Default\Service Worker\Database/MANIFEST-000001
-2025/04/13-23:08:04.672 1b6c Recovering log #3
-2025/04/13-23:08:04.672 1b6c Reusing old log C:\Users\USER\Downloads\New folder\automatic-umbrella\.wwebjs_auth\session\Default\Service Worker\Database/000003.log 
+2025/04/14-21:22:18.759 6ec0 Creating DB C:\Users\USER\Downloads\New folder\automatic-umbrella\.wwebjs_auth\session\Default\Service Worker\Database since it was missing.
+2025/04/14-21:22:18.770 6ec0 Reusing MANIFEST C:\Users\USER\Downloads\New folder\automatic-umbrella\.wwebjs_auth\session\Default\Service Worker\Database/MANIFEST-000001

@@ -1,3 +1,2 @@
-2025/04/13-23:08:04.664 1b6c Reusing MANIFEST C:\Users\USER\Downloads\New folder\automatic-umbrella\.wwebjs_auth\session\Default\Local Storage\leveldb/MANIFEST-000001
-2025/04/13-23:08:04.665 1b6c Recovering log #4
-2025/04/13-23:08:04.665 1b6c Reusing old log C:\Users\USER\Downloads\New folder\automatic-umbrella\.wwebjs_auth\session\Default\Local Storage\leveldb/000004.log 
+2025/04/14-21:22:12.410 27b0 Creating DB C:\Users\USER\Downloads\New folder\automatic-umbrella\.wwebjs_auth\session\Default\Local Storage\leveldb since it was missing.
+2025/04/14-21:22:12.432 27b0 Reusing MANIFEST C:\Users\USER\Downloads\New folder\automatic-umbrella\.wwebjs_auth\session\Default\Local Storage\leveldb/MANIFEST-000001

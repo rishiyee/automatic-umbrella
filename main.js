@@ -19,6 +19,7 @@ const client = new Client({
 });
 
 const userState = new Map();
+
 const roomData = {
   '1': {
     name: 'Deluxe Lawn View',
@@ -123,6 +124,9 @@ client.on('message', async (message) => {
   const msg = message.body.trim().toLowerCase();
   const userId = message.from;
 
+  // 👇 Log every message received in terminal
+  console.log(`[${new Date().toLocaleString()}] Message from ${message.from}: ${message.body}`);
+
   if (["hi", "hello", "hai", "namaste", "hey"].includes(msg)) {
     userState.set(userId, 'main');
     return await sendMainMenu(chat);
@@ -134,6 +138,13 @@ client.on('message', async (message) => {
   }
 
   const state = userState.get(userId) || 'main';
+
+  // ✅ Booking detail format detection
+  const bookingRegex = /name:\s*.+\ncheck-in:\s*\d{2}-\d{2}-\d{4}\ncheck-out:\s*\d{2}-\d{2}-\d{4}\nnumber of guests:\s*.+/i;
+  if (bookingRegex.test(message.body.trim())) {
+    await chat.sendMessage('✅ *Thank you for your booking details!*\nOur team will connect with you shortly to confirm your booking.');
+    return await sendMainMenu(chat);
+  }
 
   switch (state) {
     case 'main': {
@@ -175,7 +186,7 @@ client.on('message', async (message) => {
       } else if (msg === '2') {
         return await sendBookingInfo(chat);
       } else {
-        return await chat.sendMessage('❗ Invalid option. Please reply with *1*, *2*, or *0* to return to main menu.');
+        return await chat.sendMessage('Thank you! ✅ Our team will connect with you shortly to confirm the booking.\nSend *0* to return to the main menu.');
       }
     }
 
