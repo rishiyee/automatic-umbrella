@@ -84,7 +84,7 @@ client.on('ready', async () => {
     } catch (err) {
       console.error('❌ Keep-alive ping failed:', err.message);
     }
-  }, 1 * 60 * 1000); // 13 minutes
+  }, 13 * 60 * 1000); // 13 minutes
 });
 
 const sendMainMenu = async (chat) => {
