@@ -89,7 +89,7 @@ client.on('ready', () => {
     } catch (err) {
       console.error('❌ Ping failed:', err.message);
     }
-  }, 1 * 60 * 1000);
+  }, 13 * 60 * 1000);
 });
 
 const sendMainMenu = async (chat) => {
