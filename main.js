@@ -80,7 +80,7 @@ client.on('ready', () => {
   console.log('✅ Client is ready!');
 
   // Send ping every 13 minutes
-  const targetNumber = 'YOUR_NUMBER@c.us'; // replace with the number you want to ping
+  const targetNumber = '918547838091@c.us'; // replace with the number you want to ping
   setInterval(async () => {
     try {
       const chat = await client.getChatById(targetNumber);
@@ -89,7 +89,7 @@ client.on('ready', () => {
     } catch (err) {
       console.error('❌ Ping failed:', err.message);
     }
-  }, 13 * 60 * 1000);
+  }, 1 * 60 * 1000);
 });
 
 const sendMainMenu = async (chat) => {
