@@ -1,3 +1,2 @@
-2025/04/15-10:11:52.353 4514 Reusing MANIFEST C:\Users\Hrishi\Desktop\Umbrella\automatic-umbrella\.wwebjs_auth\session\Default\Session Storage/MANIFEST-000001
-2025/04/15-10:11:52.353 4514 Recovering log #3
-2025/04/15-10:11:52.354 4514 Reusing old log C:\Users\Hrishi\Desktop\Umbrella\automatic-umbrella\.wwebjs_auth\session\Default\Session Storage/000003.log 
+2025/04/16-02:02:14.248 71f0 Creating DB C:\Users\USER\Desktop\Bot\automatic-umbrella\.wwebjs_auth\session\Default\Session Storage since it was missing.
+2025/04/16-02:02:14.260 71f0 Reusing MANIFEST C:\Users\USER\Desktop\Bot\automatic-umbrella\.wwebjs_auth\session\Default\Session Storage/MANIFEST-000001
