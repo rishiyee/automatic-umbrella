@@ -68,8 +68,23 @@ client.on('qr', (qr) => {
   qrcode.generate(qr, { small: true });
 });
 
-client.on('ready', () => {
+client.on('ready', async () => {
   console.log('✅ Client is ready!');
+
+  // ✅ Your WhatsApp number here (no + sign, no spaces)
+  const myNumber = '918547838091@c.us';
+
+  // 🔁 Keep-alive ping every 13 minutes
+  setInterval(async () => {
+    try {
+      const chat = await client.getChatById(myNumber);
+      await chat.sendSeen();
+      await client.sendMessage(myNumber, '👋 Bot is still active at ' + new Date().toLocaleTimeString());
+      console.log('✅ Keep-alive ping sent');
+    } catch (err) {
+      console.error('❌ Keep-alive ping failed:', err.message);
+    }
+  }, 1 * 60 * 1000); // 13 minutes
 });
 
 const sendMainMenu = async (chat) => {
@@ -124,7 +139,6 @@ client.on('message', async (message) => {
   const msg = message.body.trim().toLowerCase();
   const userId = message.from;
 
-  // 👇 Log every message received in terminal
   console.log(`[${new Date().toLocaleString()}] Message from ${message.from}: ${message.body}`);
 
   if (["hi", "hello", "hai", "namaste", "hey"].includes(msg)) {
@@ -139,14 +153,12 @@ client.on('message', async (message) => {
 
   const state = userState.get(userId) || 'main';
 
-  // ✅ Booking detail format detection
   const bookingRegex = /name:\s*.+\ncheck-in:\s*\d{2}-\d{2}-\d{4}\ncheck-out:\s*\d{2}-\d{2}-\d{4}\nnumber of guests:\s*.+/i;
   if (bookingRegex.test(message.body.trim())) {
     await chat.sendMessage('✅ *Thank you for your booking details!*\nOur team will connect with you shortly to confirm your booking.');
     return await sendMainMenu(chat);
   }
 
-  // Custom keyword-based message response
   const matchKey = Object.entries(keywords).find(([key, values]) =>
     values.some(value => msg.includes(value))
   )?.[0];
@@ -157,7 +169,7 @@ client.on('message', async (message) => {
         case '1':
           return await sendRoomOptions(chat);
         case '2':
-          return await chat.sendMessage('✨ *Room Rates:* ✨\nPremium Mountain View – ₹8,500\nPremium Pool & Mountain View – ₹8,500\nDeluxe Pool & Forest View – ₹8,000\nDeluxe Lawn View – ₹8,000\nHoneymoon Suite – ₹~₹20,000~ ₹15,000\nPool Villa – ₹~₹15,000~ ₹13,000 \nSend *0* to return to main menu.');
+          return await chat.sendMessage('✨ *Room Rates:* ✨\nPremium Mountain View – ₹8,500\nPremium Pool & Mountain View – ₹8,500\nDeluxe Pool & Forest View – ₹8,000\nDeluxe Lawn View – ₹8,000\nHoneymoon Suite – ~₹20,000~ ₹15,000\nPool Villa – ~₹15,000~ ₹13,000\nSend *0* to return to main menu.');
         case '3':
           return await chat.sendMessage('🕰 *Check-in/Check-out Info:* Check-in time: 2:00 PM, Check-out time: 12:00 PM.\nSend *0* to return to main menu.');
         case '4':
@@ -165,7 +177,7 @@ client.on('message', async (message) => {
         case '5':
           return await chat.sendMessage('❗ *Cancellation Policy:* 24-hour notice required for free cancellation.\nSend *0* to return to main menu.');
         case '6':
-          return await chat.sendMessage('📍 *Location:* [Chembarathi Wayanad on Google Maps](https://maps.app.goo.gl/wrEsauyr2EQbnP2n6) Send *0* to return to main menu.');
+          return await chat.sendMessage('📍 *Location:* [Chembarathi Wayanad on Google Maps](https://maps.app.goo.gl/wrEsauyr2EQbnP2n6)\nSend *0* to return to main menu.');
         case '7':
           return await sendBookingInfo(chat);
         default:

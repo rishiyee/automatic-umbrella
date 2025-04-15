@@ -1,15 +1,24 @@
-2025/04/15-09:33:06.847 7034 Reusing MANIFEST C:\Users\Hrishi\Desktop\Umbrella\automatic-umbrella\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2025/04/15-09:33:06.847 7034 Recovering log #87
-2025/04/15-09:33:06.848 7034 Reusing old log C:\Users\Hrishi\Desktop\Umbrella\automatic-umbrella\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000087.log 
-2025/04/15-09:33:08.676 7034 Level-0 table #93: started
-2025/04/15-09:33:08.680 7034 Level-0 table #93: 31289 bytes OK
-2025/04/15-09:33:08.682 7034 Delete type=0 #87
-2025/04/15-09:33:08.682 7034 Manual compaction at level-0 from '\x00\x1f\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00 \x00\x00\x00' @ 0 : 0; will stop at (end)
-2025/04/15-09:33:10.746 7034 Compacting 1@1 + 2@2 files
-2025/04/15-09:33:10.801 7034 Generated table #94@1: 35232 keys, 2205898 bytes
-2025/04/15-09:33:10.897 7034 Generated table #95@1: 58812 keys, 2154917 bytes
-2025/04/15-09:33:10.897 7034 Compacted 1@1 + 2@2 files => 4360815 bytes
-2025/04/15-09:33:10.898 7034 compacted to: files[ 0 0 2 0 0 0 0 ]
-2025/04/15-09:33:10.899 7034 Delete type=2 #89
-2025/04/15-09:33:10.899 7034 Delete type=2 #90
-2025/04/15-09:33:10.899 7034 Delete type=2 #93
+2025/04/15-10:11:52.154 690c Reusing MANIFEST C:\Users\Hrishi\Desktop\Umbrella\automatic-umbrella\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/04/15-10:11:52.155 690c Recovering log #97
+2025/04/15-10:11:52.234 690c Reusing old log C:\Users\Hrishi\Desktop\Umbrella\automatic-umbrella\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000097.log 
+2025/04/15-10:11:54.061 4514 Level-0 table #103: started
+2025/04/15-10:11:54.089 4514 Level-0 table #103: 1237169 bytes OK
+2025/04/15-10:11:54.091 4514 Delete type=0 #97
+2025/04/15-10:11:54.093 4514 Manual compaction at level-0 from '\x00"\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00#\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/04/15-10:11:56.230 4514 Compacting 1@1 + 2@2 files
+2025/04/15-10:11:56.344 4514 Generated table #104@1: 38414 keys, 2212113 bytes
+2025/04/15-10:11:56.497 4514 Generated table #105@1: 53181 keys, 2205880 bytes
+2025/04/15-10:11:56.515 4514 Generated table #106@1: 6462 keys, 121867 bytes
+2025/04/15-10:11:56.515 4514 Compacted 1@1 + 2@2 files => 4539860 bytes
+2025/04/15-10:11:56.516 4514 compacted to: files[ 0 0 3 0 0 0 0 ]
+2025/04/15-10:11:56.517 4514 Delete type=2 #99
+2025/04/15-10:11:56.517 4514 Delete type=2 #100
+2025/04/15-10:11:56.518 4514 Delete type=2 #103
+2025/04/15-10:13:00.432 6b4c Level-0 table #108: started
+2025/04/15-10:13:00.475 6b4c Level-0 table #108: 1758945 bytes OK
+2025/04/15-10:13:00.477 6b4c Delete type=0 #102
+2025/04/15-10:13:00.773 4514 Compacting 1@1 + 3@2 files
+2025/04/15-10:13:00.924 4514 Generated table #109@1: 49855 keys, 2229992 bytes
+2025/04/15-10:13:01.043 4514 Generated table #110@1: 46613 keys, 1008131 bytes
+2025/04/15-10:13:01.043 4514 Compacted 1@1 + 3@2 files => 3238123 bytes
+2025/04/15-10:13:01.044 4514 compacted to: files[ 0 0 2 0 0 0 0 ]
