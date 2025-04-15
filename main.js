@@ -146,17 +146,18 @@ client.on('message', async (message) => {
     return await sendMainMenu(chat);
   }
 
+  // Custom keyword-based message response
+  const matchKey = Object.entries(keywords).find(([key, values]) =>
+    values.some(value => msg.includes(value))
+  )?.[0];
+
   switch (state) {
     case 'main': {
-      const matchKey = Object.entries(keywords).find(([key, values]) =>
-        values.includes(msg)
-      )?.[0];
-
       switch (matchKey) {
         case '1':
           return await sendRoomOptions(chat);
         case '2':
-          return await chat.sendMessage('✨ *Rates:* Room rates vary. Please refer to the specific room details.\nSend *0* to return to main menu.');
+          return await chat.sendMessage('✨ *Room Rates:* ✨\nPremium Mountain View – ₹8,500\nPremium Pool & Mountain View – ₹8,500\nDeluxe Pool & Forest View – ₹8,000\nDeluxe Lawn View – ₹8,000\nHoneymoon Suite – ₹~₹20,000~ ₹15,000\nPool Villa – ₹~₹15,000~ ₹13,000 \nSend *0* to return to main menu.');
         case '3':
           return await chat.sendMessage('🕰 *Check-in/Check-out Info:* Check-in time: 2:00 PM, Check-out time: 12:00 PM.\nSend *0* to return to main menu.');
         case '4':
@@ -164,11 +165,11 @@ client.on('message', async (message) => {
         case '5':
           return await chat.sendMessage('❗ *Cancellation Policy:* 24-hour notice required for free cancellation.\nSend *0* to return to main menu.');
         case '6':
-          return await chat.sendMessage('📍 *Location:* https://goo.gl/maps/example\nSend *0* to return to main menu.');
+          return await chat.sendMessage('📍 *Location:* [Chembarathi Wayanad on Google Maps](https://maps.app.goo.gl/wrEsauyr2EQbnP2n6) Send *0* to return to main menu.');
         case '7':
           return await sendBookingInfo(chat);
         default:
-          return await chat.sendMessage("🙏 I didn't understand that. Please choose a valid option from the menu:\n*1-7* or *0* to return to main menu.");
+          return await chat.sendMessage("🙏 Thank you for reaching out! Our team is currently busy assisting other guests. We’ll get back to you shortly. We appreciate your patience! 🌿\n*0* to return to main menu.");
       }
     }
 
