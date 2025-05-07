@@ -1,7 +1,24 @@
 {
+  "name": "ai-whatsapp-bot",
+  "version": "1.0.0",
+  "description": "AI-powered WhatsApp bot with natural language processing using Gemini",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
   "dependencies": {
+    "@google/generative-ai": "^0.2.0",
+    "axios": "^1.6.0",
+    "chrono-node": "^2.7.0",
+    "dotenv": "^16.0.3",
+    "ffmpeg-static": "^5.2.0",
     "node-schedule": "^2.1.1",
     "qrcode-terminal": "^0.12.0",
-    "whatsapp-web.js": "^1.27.0"
+    "sharp": "^0.33.0",
+    "whatsapp-web.js": "^1.23.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
   }
 }
