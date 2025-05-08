@@ -7,6 +7,8 @@ const sharp = require('sharp');
 const fs = require('fs').promises;
 const path = require('path');
 require('dotenv').config();
+const express = require('express');
+const http = require('http');
 
 let client;
 let isShuttingDown = false;
@@ -304,5 +306,25 @@ function initializeClient() {
 
   client.initialize();
 }
+
+// Self-ping server to keep the bot active
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.get('/', (req, res) => {
+  res.send('Bot is alive!');
+});
+
+const server = http.createServer(app);
+server.listen(PORT, () => {
+  console.log(`🌐 Self-ping server running on port ${PORT}`);
+});
+
+// Self-ping every 5 minutes (adjust if needed)
+setInterval(() => {
+  axios.get(`http://localhost:${PORT}`).catch(err => {
+    console.error('❌ Self-ping failed:', err.message);
+  });
+}, 5 * 60 * 1000);
 
 initializeClient();
